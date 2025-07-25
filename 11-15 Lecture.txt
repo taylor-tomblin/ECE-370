@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int rand_perm(int n, int perm[]) {
+    for(int i = 0; i < n; i++) {
+        perm[i] = i;
+    }
+
+    for(int i = 0; i < n; i++) {
+        int k = rand() % n;
+        swap(&perm[i], &perm[k]);
+    }
+}
+
+void print_array(int n, int x[], string label) {
+    cout << "\n\n" << label << ": ";
+
+    for(int i = 0; i < n; i++) {
+        cout << x[i] << " ";
+    }
+}
+
+
+int main() {
+    int p[100000];
+    int n = 500;
+
+    for(int i = 0; i < 200; i++) {
+        rand_perm(n, p);
+        print_array(n, p, "p");
+    }
+
+    cout << "\n" << endl;
+    return 0;
+}

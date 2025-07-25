@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.5)
+
+project(10-16_Lecture LANGUAGES C)
+
+add_executable(10-16_Lecture main.c)
+
+include(GNUInstallDirs)
+install(TARGETS 10-16_Lecture
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
